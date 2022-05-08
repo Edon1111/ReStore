@@ -20,6 +20,7 @@ namespace API
             try{
                 context.Database.Migrate();
                 DbInitializer.Initialize(context);
+                DbBlogInitializer.Initialize(context);
             }
             catch(Exception ex){
                 logger.LogError(ex,"Problem migrating data");

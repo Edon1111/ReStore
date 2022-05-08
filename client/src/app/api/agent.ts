@@ -60,6 +60,11 @@ const Catalog = {
   details: (id: number) => requests.get(`products/${id}`),
 };
 
+const Blog = {
+  list: () => requests.get("blogs"),
+  details: (id: number) => requests.get(`blogs/${id}`),
+};
+
 const TestErrors = {
   get400Error: () => requests.get("buggy/bad-request"),
   get401Error: () => requests.get("buggy/unauthorised"),
@@ -76,6 +81,7 @@ const Basket = {
     requests.delete(`basket?productId=${productId}&quantity=${quantity}`),
 };
 const agent = {
+  Blog,
   Catalog,
   TestErrors,
   Basket,

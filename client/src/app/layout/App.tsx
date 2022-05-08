@@ -21,6 +21,8 @@ import LoadingComponent from "./LoadingComponent";
 import CheckoutPage from "../../features/checkout/CheckoutPage";
 import { useAppDispatch } from "../store/configureStore";
 import { setBasket } from "../../features/basket/basketSlice";
+import Blog from "../../features/blog/Blog";
+import BlogDetails from "../../features/blog/BlogDetails";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -65,6 +67,8 @@ function App() {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/catalog" component={Catalog} />
             <Route path="/catalog/:id" component={ProductDetails} />
+            <Route exact path="/blog" component={Blog} />
+            <Route path="/blog/:id" component={BlogDetails} />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
             <Route path="/server-error" component={ServerError} />
